@@ -1,0 +1,115 @@
+import 'package:course_web/app/modules/topic/controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../global/appBar.dart';
+import '../../global/baseButton.dart';
+
+class CommentClaseView extends GetView<TopicController> {
+  const CommentClaseView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: PreferredSize(
+          child: const AppBarBase(),
+          preferredSize: Size(Get.width, 50),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            color: const Color(0xff2E3136),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const SizedBox(
+                height: 30,
+              ),
+              const Text(
+                'Resposta sobre o tópico',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Card(
+                color: const Color(0xff202225),
+                elevation: 2,
+                child: Container(
+                  margin: const EdgeInsets.only(left: 40, right: 40),
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      ListView.builder(
+                        itemCount: 12,
+                        shrinkWrap: true,
+                        primary: false,
+                        itemBuilder: (BuildContext context, index) {
+                          return (Card(
+                              child: InkWell(
+                                  onTap: () {},
+                                  child: const ListTile(
+                                    leading: Icon(
+                                        Icons.supervised_user_circle_sharp),
+                                    title: Text('Front-End ou Back-End?'),
+                                    trailing: Text('6 Comentários'),
+                                  ))));
+                        },
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      TextFormField(
+                        maxLines: 6,
+                        style: const TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(
+                                color: Colors.white,
+                                width: 1.0,
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                              borderSide: const BorderSide(
+                                color: Colors.blue,
+                              ),
+                            ),
+                            labelStyle: const TextStyle(color: Colors.white),
+                            label: const Text('Sua resposta')),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        width: MediaQuery.of(context).size.width,
+                        child: SizedBox(
+                          height: 45,
+                          width: 200,
+                          child: BaseButton(
+                            text: "Enviar",
+                            onPress: () {
+                              controller.displaySuccessMotionToast();
+                            },
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 22,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ]),
+          ),
+        ));
+  }
+}
