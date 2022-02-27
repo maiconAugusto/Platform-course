@@ -20,6 +20,33 @@ class TopicView extends GetView<TopicController> {
         width: MediaQuery.of(context).size.width,
         color: const Color(0xff2E3136),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 1.1,
+            child: Row(children: [
+              Expanded(
+                  child: Container(
+                      alignment: Alignment.topLeft,
+                      child: IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back_sharp,
+                          color: Colors.white,
+                        ),
+                      ))),
+              const Expanded(
+                child: Text(
+                  'Novo tópico',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+              )
+            ]),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Form(
             child: Card(
               color: const Color(0xff202225),
