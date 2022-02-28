@@ -9,6 +9,8 @@ import 'package:course_web/app/modules/myData/bindings.dart';
 import 'package:course_web/app/modules/myData/page.dart';
 import 'package:course_web/app/modules/recoveryPassword/binding.dart';
 import 'package:course_web/app/modules/recoveryPassword/page.dart';
+import 'package:course_web/app/modules/support/bindings.dart';
+import 'package:course_web/app/modules/support/page.dart';
 import 'package:course_web/app/modules/topic/bindings.dart';
 import 'package:course_web/app/modules/topic/page.dart';
 import 'package:get/get.dart';
@@ -52,6 +54,11 @@ abstract class AppPages {
       name: Routes.myData,
       page: () => const MyDataView(),
       binding: MyDataBindings(),
+    ),
+    GetPage(
+      name: Routes.support,
+      page: () => const SupportView(),
+      binding: SupportBindings(),
     ),
   ];
 }

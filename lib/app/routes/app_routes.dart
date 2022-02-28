@@ -6,4 +6,5 @@ abstract class Routes {
   static const newTopic = '/novo-topico';
   static const commentClase = '/topicos';
   static const myData = '/meus-dados';
+  static const support = '/suporte';
 }

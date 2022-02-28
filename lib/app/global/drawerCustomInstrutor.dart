@@ -35,15 +35,15 @@ class DrawerCustom extends StatelessWidget {
             )),
           ),
           ListTile(
-            leading: const Icon(Icons.my_library_books_sharp),
-            title: const Text('Meus cursos'),
+            leading: const Icon(Icons.dashboard_outlined),
+            title: const Text('Dashboard'),
             onTap: () {
               Get.toNamed(Routes.home);
             },
           ),
           ListTile(
             leading: const Icon(Icons.theater_comedy_rounded),
-            title: const Text('Modo instrutor'),
+            title: const Text('Cursos'),
             onTap: () {
               Get.toNamed(Routes.home);
             },
