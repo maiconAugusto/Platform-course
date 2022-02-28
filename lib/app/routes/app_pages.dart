@@ -3,10 +3,17 @@ import 'package:course_web/app/modules/auth/page.dart';
 import 'package:course_web/app/modules/commentsClase/bindings.dart';
 import 'package:course_web/app/modules/course/binding.dart';
 import 'package:course_web/app/modules/course/page.dart';
+import 'package:course_web/app/modules/courses/bindings.dart';
+import 'package:course_web/app/modules/courses/page.dart';
+import 'package:course_web/app/modules/dashboard/bindings.dart';
 import 'package:course_web/app/modules/home/bindings.dart';
 import 'package:course_web/app/modules/home/page.dart';
+import 'package:course_web/app/modules/instructor/bindigins.dart';
+import 'package:course_web/app/modules/instructor/page.dart';
 import 'package:course_web/app/modules/myData/bindings.dart';
 import 'package:course_web/app/modules/myData/page.dart';
+import 'package:course_web/app/modules/payment/bindings.dart';
+import 'package:course_web/app/modules/payment/page.dart';
 import 'package:course_web/app/modules/recoveryPassword/binding.dart';
 import 'package:course_web/app/modules/recoveryPassword/page.dart';
 import 'package:course_web/app/modules/support/bindings.dart';
@@ -16,6 +23,7 @@ import 'package:course_web/app/modules/topic/page.dart';
 import 'package:get/get.dart';
 
 import '../modules/commentsClase/page.dart';
+import '../modules/dashboard/page.dart';
 import 'app_routes.dart';
 
 abstract class AppPages {
@@ -60,5 +68,25 @@ abstract class AppPages {
       page: () => const SupportView(),
       binding: SupportBindings(),
     ),
+    GetPage(
+      name: Routes.dashboard,
+      page: () => const DashboardClassView(),
+      binding: DashBoardBinings(),
+    ),
+    GetPage(
+      name: Routes.courses,
+      page: () => const CoursesView(),
+      binding: CoursesBindings(),
+    ),
+    GetPage(
+      name: Routes.instructor,
+      page: () => const InstructorView(),
+      binding: InstructorBindings(),
+    ),
+    GetPage(
+      name: Routes.payment,
+      page: () => const PaymentView(),
+      binding: PaymentBindings(),
+    )
   ];
 }

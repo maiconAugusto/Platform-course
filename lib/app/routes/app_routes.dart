@@ -7,4 +7,8 @@ abstract class Routes {
   static const commentClase = '/topicos';
   static const myData = '/meus-dados';
   static const support = '/suporte';
+  static const dashboard = '/dashboard';
+  static const courses = '/cursos';
+  static const instructor = '/dados-do-instrutor';
+  static const payment = '/pagamento';
 }

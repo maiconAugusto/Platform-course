@@ -2,8 +2,9 @@ import 'package:course_web/app/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DrawerCustom extends StatelessWidget {
-  const DrawerCustom({Key? key}) : super(key: key);
+class DrawerCustomInstrutor extends StatelessWidget {
+  const DrawerCustomInstrutor({Key? key, this.selected}) : super(key: key);
+  final int? selected;
 
   @override
   Widget build(BuildContext context) {
@@ -34,33 +35,72 @@ class DrawerCustom extends StatelessWidget {
               ],
             )),
           ),
-          ListTile(
-            leading: const Icon(Icons.dashboard_outlined),
-            title: const Text('Dashboard'),
-            onTap: () {
-              Get.toNamed(Routes.home);
-            },
+          Container(
+              color: selected == 0 ? Colors.grey[600] : null,
+              child: ListTile(
+                leading: Icon(
+                  Icons.dashboard_outlined,
+                  color: selected == 0 ? Colors.white : null,
+                ),
+                title: Text(
+                  'Dashboard',
+                  style: TextStyle(color: selected == 0 ? Colors.white : null),
+                ),
+                onTap: () {
+                  Get.toNamed(Routes.dashboard);
+                },
+              )),
+          Container(
+            color: selected == 1 ? Colors.grey[600] : null,
+            child: ListTile(
+              leading: Icon(
+                Icons.theater_comedy_rounded,
+                color: selected == 1 ? Colors.white : null,
+              ),
+              title: Text('Cursos',
+                  style: TextStyle(
+                    color: selected == 1 ? Colors.white : null,
+                  )),
+              onTap: () {
+                Get.toNamed(Routes.courses);
+              },
+            ),
           ),
-          ListTile(
-            leading: const Icon(Icons.theater_comedy_rounded),
-            title: const Text('Cursos'),
-            onTap: () {
-              Get.toNamed(Routes.home);
-            },
+          Container(
+            color: selected == 2 ? Colors.grey[600] : null,
+            child: ListTile(
+              leading: Icon(
+                Icons.person_outlined,
+                color: selected == 2 ? Colors.white : null,
+              ),
+              title: Text(
+                'Meus dados',
+                style: TextStyle(
+                  color: selected == 2 ? Colors.white : null,
+                ),
+              ),
+              onTap: () {
+                Get.toNamed(Routes.instructor);
+              },
+            ),
           ),
-          ListTile(
-            leading: const Icon(Icons.help_outline_rounded),
-            title: const Text('Suporte'),
-            onTap: () {
-              Get.toNamed(Routes.support);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.person_outlined),
-            title: const Text('Meus dados'),
-            onTap: () {
-              Get.toNamed(Routes.myData);
-            },
+          Container(
+            color: selected == 3 ? Colors.grey[600] : null,
+            child: ListTile(
+              leading: Icon(
+                Icons.monetization_on,
+                color: selected == 3 ? Colors.white : null,
+              ),
+              title: Text(
+                'Pagamento',
+                style: TextStyle(
+                  color: selected == 3 ? Colors.white : null,
+                ),
+              ),
+              onTap: () {
+                Get.toNamed(Routes.payment);
+              },
+            ),
           ),
           ListTile(
             leading: const Icon(Icons.exit_to_app),

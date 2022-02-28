@@ -77,6 +77,7 @@ class Auth extends StatelessWidget {
                               height: 45,
                               width: double.infinity,
                               child: BaseButton(
+                                loading: true,
                                 text: "Entrar",
                                 onPress: () {
                                   Get.toNamed(Routes.home);

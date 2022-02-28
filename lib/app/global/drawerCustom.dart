@@ -45,7 +45,7 @@ class DrawerCustom extends StatelessWidget {
             leading: const Icon(Icons.theater_comedy_rounded),
             title: const Text('Modo instrutor'),
             onTap: () {
-              Get.toNamed(Routes.home);
+              Get.toNamed(Routes.dashboard);
             },
           ),
           ListTile(
