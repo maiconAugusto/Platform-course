@@ -60,10 +60,10 @@ class DrawerCustom extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: Icon(Icons.person_outlined),
             title: const Text('Meus dados'),
             onTap: () {
-              Get.toNamed(Routes.home);
+              Get.toNamed(Routes.myData);
             },
           ),
           ListTile(

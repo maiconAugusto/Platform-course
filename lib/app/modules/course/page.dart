@@ -184,6 +184,10 @@ class Course extends GetView<CourseController> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
+                                                IconButton(
+                                                    onPressed: () {},
+                                                    icon:
+                                                        Icon(Icons.arrow_back)),
                                                 const Text(
                                                   'Conteúdo do curso',
                                                   style: TextStyle(

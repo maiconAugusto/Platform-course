@@ -5,4 +5,5 @@ abstract class Routes {
   static const course = '/curso';
   static const newTopic = '/novo-topico';
   static const commentClase = '/topicos';
+  static const myData = '/meus-dados';
 }

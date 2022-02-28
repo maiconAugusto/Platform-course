@@ -5,6 +5,8 @@ import 'package:course_web/app/modules/course/binding.dart';
 import 'package:course_web/app/modules/course/page.dart';
 import 'package:course_web/app/modules/home/bindings.dart';
 import 'package:course_web/app/modules/home/page.dart';
+import 'package:course_web/app/modules/myData/bindings.dart';
+import 'package:course_web/app/modules/myData/page.dart';
 import 'package:course_web/app/modules/recoveryPassword/binding.dart';
 import 'package:course_web/app/modules/recoveryPassword/page.dart';
 import 'package:course_web/app/modules/topic/bindings.dart';
@@ -45,6 +47,11 @@ abstract class AppPages {
       name: Routes.commentClase,
       page: () => const CommentClaseView(),
       binding: CommentClaseBindings(),
+    ),
+    GetPage(
+      name: Routes.myData,
+      page: () => const MyDataView(),
+      binding: MyDataBindings(),
     ),
   ];
 }
